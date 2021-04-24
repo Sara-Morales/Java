@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Clase_8.Animales;
+package Clase_10Ruta;
 
 /**
  *
- * @author Sara
+ * @author Diego Ramirez
  */
-public class Bird extends Animal {
-    
+public class Gerente extends Persona {
+   public void pagar(){
+       System.out.println("El gerente le esta pagando al empleado");
+   } 
 }

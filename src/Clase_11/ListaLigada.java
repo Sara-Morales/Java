@@ -2,44 +2,40 @@ package Clase_11;
 
 public class ListaLigada {
 
-    Nodo head = new Nodo();
+    public Nodo head = null;
 
-    public void insertarPrincipio(int dato) {
-        Nodo nodo = new Nodo(dato);
-
+    public void insertarPrincipio(String cedula, String nombre, String apellido) {
+        Nodo newNodo = new Nodo(cedula, nombre, apellido);
         if (head == null) {
-            head = nodo;
+            head = newNodo;
         } else {
-            nodo.siguiente = head;
-            head = nodo;
+            newNodo.next = head;
+            head = newNodo;
         }
-
     }
 
-    public void inserFinal(int dato) {
-        Nodo nodo = new Nodo(dato);
+    public void insertarFinal(String cedula, String nombre, String apellido) {
+        Nodo newNodo = new Nodo(cedula, nombre, apellido);
         if (head == null) {
-            head = nodo;
+            head = newNodo;
         } else {
-            Nodo apuntador = head;
-            while (apuntador.siguiente != null) {
-                apuntador = apuntador.siguiente;
+            Nodo pointer = head;
+            while (pointer.next != null) {
+                pointer = pointer.next;
             }
-            apuntador.siguiente = nodo;
-
+            pointer.next = newNodo;
         }
+
     }
 
     public void mostrar() {
-//        System.out.println(head.dato);
-//        System.out.println(head.siguiente.dato);
 
-        Nodo apuntador = head;
-        int contador ;
+        Nodo pointer = head;
+        while (pointer.next != null) {
+            System.out.println(pointer.dato.nombre);
+            pointer = pointer.next;
 
-        while (apuntador.siguiente != null) {
-            System.out.println(apuntador.dato);
-            apuntador = apuntador.siguiente;
         }
+        System.out.println(pointer.dato.nombre);
     }
 }
